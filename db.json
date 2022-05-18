@@ -4,25 +4,97 @@
       "id": "1",
       "title": "Article 1",
       "content": "Angular component looks awesome!",
-      "author": "Orangefire"
+      "author": "1"
     },
     {
       "title": "Marche stp",
       "content": "qklzbdl",
-      "author": "lkqhbzd",
+      "author": "1",
       "id": "w_rtGk5"
     },
     {
       "title": "Mega test",
       "content": "fsmqljd",
-      "author": "mksfjqe",
+      "author": "1",
       "id": "XyJHmUo"
     },
     {
       "title": "Dernier test",
       "content": "mo<hqeljsnf",
-      "author": "mksfjnemjn",
+      "author": "2",
       "id": "QwG-30a"
+    },
+    {
+      "title": "1er test",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6kkmV33X"
+    },
+    {
+      "title": "2eme test",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6V3FJHD3X08"
+    },
+    {
+      "title": "3",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6V330885HCX"
+    },
+    {
+      "title": "4",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hJFDGDN6V33X"
+    },
+    {
+      "title": "5",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6IKFKHGV33X"
+    },
+    {
+      "title": "6",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6V33X"
+    },
+    {
+      "title": "7",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "h856V33X"
+    },
+    {
+      "title": "8",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hN6NCV33X"
+    },
+    {
+      "title": "9",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "hJUN6V33X"
+    },
+    {
+      "title": "10",
+      "content": "ADA\n",
+      "author": "1",
+      "id": "As6V33X"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Orangefire",
+      "id": "1",
+      "bio": "I'm an author"
+    },
+    {
+      "name": "Lucas",
+      "id": "2",
+      "bio": "Blablabla"
     }
   ]
 }
