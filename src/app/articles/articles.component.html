@@ -1,0 +1,16 @@
+<!-- <app-article-creation (newArticle)="addArticle($event)"></app-article-creation> -->
+<input (input)="searchArticles($event)" (ngModelChange)="searchArticles" type="text" placeholder="Search">
+<ul>
+    <!-- <li *ngFor="let article of articles()">
+      <app-article [title]="article.title" [content]="article.content" [author] ="article.author"></app-article>
+    </li> -->
+    
+    <li *ngFor="let article of this.articles">
+      <app-article [article]="article" (deletedArticle)="deleteArticle($event)">
+      </app-article> 
+      
+    </li>
+    
+  </ul>
+
+  

@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Article 1",
+      "content": "Angular component looks awesome!",
+      "author": "Orangefire"
+    },
+    {
+      "title": "Marche stp",
+      "content": "qklzbdl",
+      "author": "lkqhbzd",
+      "id": "w_rtGk5"
+    },
+    {
+      "title": "Mega test",
+      "content": "fsmqljd",
+      "author": "mksfjqe",
+      "id": "XyJHmUo"
+    },
+    {
+      "title": "Dernier test",
+      "content": "mo<hqeljsnf",
+      "author": "mksfjnemjn",
+      "id": "QwG-30a"
+    }
+  ]
+}
