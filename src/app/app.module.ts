@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticleViewComponent } from './article-view/article-view.component';
 import { AuthorViewComponent } from './author-view/author-view.component';
 import { LastArticlesComponent } from './last-articles/last-articles.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [ArticleService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div>
     <h3> {{this.article.title}} </h3>
     <p> {{this.article.content}} </p>
-    <a (click)="goToAuthor()"> <p> {{this.author.name}} </p> </a>
-    <button (click)="detailArticle()">Details</button>
-    <button (click)="deleteArticle()">Delete</button>
+    <a class="link-primary" (click)="goToAuthor()"> <p> {{this.author.name}} </p> </a>
+    <button (click)="detailArticle()" class="btn-primary">Details</button>
+    <button (click)="deleteArticle()" class="btn-secondary" >Delete</button>
 </div>
