@@ -16,6 +16,9 @@ export class ArticleService {
   public getArticles(): Observable<Article[]> {
     return this.http.get<Article[]>("http://localhost:3000/articles");
   }
+  public getLastTenArticles() : Observable<Article[]> {
+    return this.http.get<Article[]>("http://localhost:3000/articles?_limit=10");
+  }
 
   public deleteArticle(id:number){
     return this.http.delete("http://localhost:3000/articles/" + id);

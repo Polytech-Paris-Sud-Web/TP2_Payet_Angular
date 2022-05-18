@@ -1,7 +1,9 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from 'src/models/Article';
+import { Author } from 'src/models/Author';
 import { ArticleService } from '../article.service';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-article-view',
@@ -12,11 +14,16 @@ export class ArticleViewComponent implements OnInit {
 
   @Input()
   article  !: Article
+  @Input()
+  author  !: Author
 
-  constructor(private route : ActivatedRoute, private router :Router, private articleService : ArticleService) {
+  constructor(private route : ActivatedRoute, private router :Router, private articleService : ArticleService, private authorService : AuthorService) {
     const id =  parseInt(this.route.snapshot.paramMap.get('id')|| '0');
     this.articleService.getArticle(id).subscribe((article) =>{
       this.article = article;
+      this.authorService.getAuthor(article.author).subscribe((author) =>{
+        this.author = author;
+      });
     });
    }
 

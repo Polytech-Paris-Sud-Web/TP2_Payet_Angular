@@ -1,7 +1,7 @@
 <div>
     <h3> {{this.article.title}} </h3>
     <p> {{this.article.content}} </p>
-    <p> {{this.article.author}} </p>
+    <a (click)="goToAuthor()"> <p> {{this.author.name}} </p> </a>
     <button (click)="detailArticle()">Details</button>
     <button (click)="deleteArticle()">Delete</button>
 </div>

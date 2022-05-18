@@ -11,8 +11,14 @@
     </label>
     <br />
     <label class="center-block">author:
-      <input class="form-control" formControlName="author">
     </label>
+    <select #cricket (change)="update($event)" formControlName="author">
+      <option *ngFor="let a of authors" [value]="a.id">
+          {{a.name}}
+      </option>
+    </select>
+
+    
     <br />
     <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
   </div>
