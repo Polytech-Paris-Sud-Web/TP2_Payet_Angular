@@ -21,6 +21,7 @@ export class ArticleService {
     if (!this.preloadedArticles) {
       return this.http.get<Article[]>(`${environment.apiUrl}/articles`).pipe(
         map(articles => {
+          //console.log(articles);
           this.preloadedArticles = articles;
           return articles;
         })
@@ -69,3 +70,5 @@ export class ArticleService {
   }
 
 }
+
+
