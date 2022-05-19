@@ -19,10 +19,10 @@ export class ArticleService {
 
   public preloadArticles(): Observable<Article[]> {
     if (!this.preloadedArticles) {
-      return this.http.get<Article[]>(`${environment.apiUrl}/authors`).pipe(
-        map(authors => {
-          this.preloadedArticles = authors;
-          return authors;
+      return this.http.get<Article[]>(`${environment.apiUrl}/articles`).pipe(
+        map(articles => {
+          this.preloadedArticles = articles;
+          return articles;
         })
       );
     }
@@ -43,11 +43,11 @@ export class ArticleService {
   }
 
   public deleteArticle(id:number){
-    return this.http.delete("http://localhost:3000/articles/" + id);
+    return this.http.delete(`${environment.apiUrl}/articles`+ id);
   }
 
   public addArticle(raw: RawArticle) {
-    return this.http.post<Article>("http://localhost:3000/articles", raw);
+    return this.http.post<Article>(`${environment.apiUrl}/articles`, raw);
   }
 
   public getArticle(id: number) {
@@ -68,20 +68,4 @@ export class ArticleService {
     );
   }
 
-
-  // public getArticles() : Article[] {
-  //   return [{
-  //     title: 'My First Article',
-  //     content: 'Hello World',
-  //     author: 'Orangefire'
-  //   }, {
-  //     title: 'Angular component',
-  //     content: 'Angular component looks awesome!',
-  //     author: 'Orangefire'
-  //   }, {
-  //     title: 'Angular service',
-  //     content: 'I read something about angular service, i will try it soon',
-  //     author: 'Orangefire'
-  //   }];
-//} 
 }
