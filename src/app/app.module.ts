@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'last', component: LastArticlesComponent },
   { path: 'article/:id', component: ArticleViewComponent },
   { path: 'author/:id', component: AuthorViewComponent },
-  { path: '', component: LastArticlesComponent }
+  { path: '', component: ArticlesComponent }
 ]
 
 @NgModule({
