@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { Article } from '../models/Article';
 
 import {HttpClient} from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { RawArticle } from 'src/models/RawArticle';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,13 +13,33 @@ import { RawArticle } from 'src/models/RawArticle';
 })
 export class ArticleService {
 
+  private preloadedArticles : Article[] | undefined;
+
   constructor(private http : HttpClient) { }
 
+  public preloadArticles(): Observable<Article[]> {
+    if (!this.preloadedArticles) {
+      return this.http.get<Article[]>(`${environment.apiUrl}/authors`).pipe(
+        map(authors => {
+          this.preloadedArticles = authors;
+          return authors;
+        })
+      );
+    }
+    return of(this.preloadedArticles);
+  }
+
+
+  // public getArticles(): Observable<Article[]> {
+  //   return this.http.get<Article[]>("http://localhost:3000/articles");
+  // }
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles");
+    return of(this.preloadedArticles as Article[]);
   }
   public getLastTenArticles() : Observable<Article[]> {
-    return this.http.get<Article[]>("http://localhost:3000/articles?_limit=10");
+    return this.getArticles().pipe(
+      map(articles => articles.slice(0, 10))
+    );
   }
 
   public deleteArticle(id:number){
@@ -28,12 +50,22 @@ export class ArticleService {
     return this.http.post<Article>("http://localhost:3000/articles", raw);
   }
 
-  public getArticle(id:number){
-    return this.http.get<Article>("http://localhost:3000/articles/" + id);
+  public getArticle(id: number) {
+    const defaultArticle : Article = {
+      id: 0,
+      title: 'Inconnu',
+      content: 'Inconnu',
+      author: 0,
+    }
+    return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
   }
 
-  public searchArticles(s :String) {
-    return this.http.get<Article[]>("http://localhost:3000/articles?q=" + s);
+  public searchArticles(s :string) {
+    return this.getArticles().pipe(
+      map(articles => articles.filter(
+        article => article.title.includes(s) 
+        || article.content.includes(s) ))
+    );
   }
 
 

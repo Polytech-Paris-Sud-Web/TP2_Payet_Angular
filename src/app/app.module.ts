@@ -13,6 +13,8 @@ import { ArticleViewComponent } from './article-view/article-view.component';
 import { AuthorViewComponent } from './author-view/author-view.component';
 import { LastArticlesComponent } from './last-articles/last-articles.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: 'create', component: ArticleCreationComponent },
@@ -41,7 +43,13 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [ArticleService],
   bootstrap: [AppComponent]
