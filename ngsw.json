@@ -1,0 +1,96 @@
+{
+  "configVersion": 1,
+  "timestamp": 1652966154623,
+  "index": "/TP2_Payet_Angular/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/TP2_Payet_Angular/favicon.ico",
+        "/TP2_Payet_Angular/index.html",
+        "/TP2_Payet_Angular/main.78294994965bea1a.js",
+        "/TP2_Payet_Angular/manifest.webmanifest",
+        "/TP2_Payet_Angular/polyfills.87f7811fce05cb0f.js",
+        "/TP2_Payet_Angular/runtime.6fdf035918431d56.js",
+        "/TP2_Payet_Angular/styles.8d58886b09b054e5.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/TP2_Payet_Angular/assets/icons/icon-128x128.png",
+        "/TP2_Payet_Angular/assets/icons/icon-144x144.png",
+        "/TP2_Payet_Angular/assets/icons/icon-152x152.png",
+        "/TP2_Payet_Angular/assets/icons/icon-192x192.png",
+        "/TP2_Payet_Angular/assets/icons/icon-384x384.png",
+        "/TP2_Payet_Angular/assets/icons/icon-512x512.png",
+        "/TP2_Payet_Angular/assets/icons/icon-72x72.png",
+        "/TP2_Payet_Angular/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "patterns": [
+        "http:\\/\\/localhost:3000\\/.*",
+        "https:\\/\\/my-json-server\\.typicode\\.com\\/Polytech-Paris-Sud-Web\\/TP2_Payet_Angular\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/TP2_Payet_Angular/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/TP2_Payet_Angular/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/TP2_Payet_Angular/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/TP2_Payet_Angular/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/TP2_Payet_Angular/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/TP2_Payet_Angular/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/TP2_Payet_Angular/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/TP2_Payet_Angular/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/TP2_Payet_Angular/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/TP2_Payet_Angular/index.html": "6566a8558935a830fdb4fc377e531edad48c5ecb",
+    "/TP2_Payet_Angular/main.78294994965bea1a.js": "26ca60f82ae4204f746fc5ca06375932fc6f3041",
+    "/TP2_Payet_Angular/manifest.webmanifest": "c0e252f16cd08005e12fe72b1a08310b206a6992",
+    "/TP2_Payet_Angular/polyfills.87f7811fce05cb0f.js": "28365ce2566e931370e475178699a31b94e20e00",
+    "/TP2_Payet_Angular/runtime.6fdf035918431d56.js": "bc6dbeae72d8c0ab48940b5121090162bf041839",
+    "/TP2_Payet_Angular/styles.8d58886b09b054e5.css": "549524ebe6ab452f8e1087c521c7238dbe7ba7c4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
