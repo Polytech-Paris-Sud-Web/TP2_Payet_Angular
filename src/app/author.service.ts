@@ -39,10 +39,10 @@ export class AuthorService {
   // public getAuthor(id:number){
   //   return this.http.get<Author>("http://localhost:3000/authors/" + id);
   // }
-  public getAuthor(id: number): Observable<Author> {
+  public getAuthor(id: string): Observable<Author> {
     const defaultAuthor : Author = {
       name: 'Inconnu',
-      id: 0,
+      id: "0",
       bio: 'Pas d\'information sur cet auteur',
     }
     return of(this.preloadedAuthors?.find(author => author.id === id) || defaultAuthor);
@@ -54,7 +54,7 @@ export class AuthorService {
   public getAuthorByName(name: string): Observable<Author> {
     const defaultAuthor : Author = {
       name: 'Inconnu',
-      id: 0,
+      id: "0",
       bio: 'Pas d\'information sur cet auteur',
     }
     return of(this.preloadedAuthors?.find(author => author.name === name) || defaultAuthor);

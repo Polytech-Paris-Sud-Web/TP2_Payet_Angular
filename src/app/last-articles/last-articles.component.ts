@@ -25,12 +25,12 @@ export class LastArticlesComponent implements OnInit {
       this.articleService.getLastTenArticles().subscribe(value => this.articles = value);
     }
 
-    deleteArticle(id: number) {
+    deleteArticle(id: string) {
       this.articleService.deleteArticle(id).subscribe(
         () => this.articleService.getArticles().subscribe(value => this.articles = value));
     }
 
-    getArticle(id:number){
+    getArticle(id:string){
       return this.articleService.getArticle(id);
     }
 

@@ -1,8 +1,8 @@
 import { Author } from "./Author";
 
 export interface Article {
-    id : number;
+    id : string;
     title: string;
     content: string;
-    author: number;
+    author: string;
 }

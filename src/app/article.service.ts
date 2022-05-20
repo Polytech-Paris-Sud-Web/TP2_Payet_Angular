@@ -46,7 +46,7 @@ export class ArticleService {
     );
   }
 
-  public deleteArticle(id:number){
+  public deleteArticle(id:string){
     return this.http.delete(`${environment.apiUrl}/articles`+ id);
   }
 
@@ -54,7 +54,7 @@ export class ArticleService {
     return this.http.post<Article>(`${environment.apiUrl}/articles`, raw);
   }
 
-  public getArticle(id: number): Observable<Article> {
+  public getArticle(id: string): Observable<Article> {
     // console.log("++++++++++++++++++++++++++++++");
     // console.log(this.preloadedArticles);
     // return this.getArticles().pipe(
@@ -62,10 +62,10 @@ export class ArticleService {
     // );
 
     const defaultArticle : Article = {
-      id: 0,
+      id: '0',
       title: 'Inconnu',
       content: 'Inconnu',
-      author: 0,
+      author: "0",
     }
     return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
   }

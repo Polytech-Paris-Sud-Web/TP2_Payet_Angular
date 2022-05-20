@@ -19,7 +19,7 @@ export class ArticleComponent implements OnInit {
   author  !: Author
 
   @Output()
-  deletedArticle : EventEmitter<number> = new EventEmitter();
+  deletedArticle : EventEmitter<string> = new EventEmitter();
 
   constructor(private route:Router, private authorService: AuthorService) {
     
