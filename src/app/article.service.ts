@@ -21,8 +21,6 @@ export class ArticleService {
     if (!this.preloadedArticles) {
       return this.http.get<Article[]>(`${environment.apiUrl}/articles`).pipe(
         map(articles => {
-          console.log("----------------------------------")
-          console.log(articles);
           this.preloadedArticles = articles;
           return articles;
         })
@@ -36,8 +34,6 @@ export class ArticleService {
   //   return this.http.get<Article[]>("http://localhost:3000/articles");
   // }
   public getArticles(): Observable<Article[]> {
-    console.log("C'est de la merde");
-    console.log(this.preloadedArticles);
     return this.preloadedArticles ? of(this.preloadedArticles) : this.http.get<Article[]>(`${environment.apiUrl}/articles`);
   }
   public getLastTenArticles() : Observable<Article[]> {
@@ -55,12 +51,6 @@ export class ArticleService {
   }
 
   public getArticle(id: string): Observable<Article> {
-    // console.log("++++++++++++++++++++++++++++++");
-    // console.log(this.preloadedArticles);
-    // return this.getArticles().pipe(
-    //   map(articles => articles.find(article => article.id === id)as Article)
-    // );
-
     const defaultArticle : Article = {
       id: '0',
       title: 'Inconnu',
