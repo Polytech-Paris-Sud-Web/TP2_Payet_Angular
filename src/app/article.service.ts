@@ -52,13 +52,17 @@ export class ArticleService {
   }
 
   public getArticle(id: number) {
-    const defaultArticle : Article = {
-      id: 0,
-      title: 'Inconnu',
-      content: 'Inconnu',
-      author: 0,
-    }
-    return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
+    return this.getArticles().pipe(
+      map(articles => articles.find(article => article.id === id)as Article)
+    );
+
+    // const defaultArticle : Article = {
+    //   id: 0,
+    //   title: 'Inconnu',
+    //   content: 'Inconnu',
+    //   author: 0,
+    // }
+    // return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
   }
 
   public searchArticles(s :string) {
