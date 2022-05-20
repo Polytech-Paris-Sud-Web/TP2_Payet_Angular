@@ -27,18 +27,11 @@ export class AuthorService {
   }
   
 
-
-  // public getAuthors(): Observable<Author[]> {
-  //   return this.http.get<Author[]>("http://localhost:3000/authors");
-  // }
   public getAuthors(): Observable<Author[]> {
     return of(this.preloadedAuthors as Author[]);
   }
 
 
-  // public getAuthor(id:number){
-  //   return this.http.get<Author>("http://localhost:3000/authors/" + id);
-  // }
   public getAuthor(id: string): Observable<Author> {
     const defaultAuthor : Author = {
       name: 'Inconnu',
@@ -48,9 +41,6 @@ export class AuthorService {
     return of(this.preloadedAuthors?.find(author => author.id === id) || defaultAuthor);
   }
 
-  // public getAuthorByName(name:string){
-  //   return this.http.get<Author>("http://localhost:3000/authors/name/" + name);
-  // }
   public getAuthorByName(name: string): Observable<Author> {
     const defaultAuthor : Author = {
       name: 'Inconnu',

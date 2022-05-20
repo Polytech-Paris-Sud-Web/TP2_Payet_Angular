@@ -12,7 +12,7 @@
     <br />
     <label class="center-block">author:
     </label>
-    <select #cricket (change)="update($event)" formControlName="author">
+    <select (change)="update($event)" formControlName="author">
       <option *ngFor="let a of authors" [value]="a.id">
           {{a.name}}
       </option>

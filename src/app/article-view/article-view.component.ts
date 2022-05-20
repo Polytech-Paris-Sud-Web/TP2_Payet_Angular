@@ -12,9 +12,7 @@ import { AuthorService } from '../author.service';
 })
 export class ArticleViewComponent implements OnInit {
 
-  //@Input()
   article  : Article = { id: '0', title: '', content: '', author: '0' };
-  //@Input()
   author : Author = { id: '0', name: '', bio:''};
 
 

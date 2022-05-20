@@ -29,10 +29,6 @@ export class ArticleService {
     return of(this.preloadedArticles);
   }
 
-
-  // public getArticles(): Observable<Article[]> {
-  //   return this.http.get<Article[]>("http://localhost:3000/articles");
-  // }
   public getArticles(): Observable<Article[]> {
     return this.preloadedArticles ? of(this.preloadedArticles) : this.http.get<Article[]>(`${environment.apiUrl}/articles`);
   }

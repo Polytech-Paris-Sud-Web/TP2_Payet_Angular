@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ArticleService } from '../article.service';
 import { Article } from '../../models/Article';
-import { Observable } from 'rxjs';
 import { RawArticle } from 'src/models/RawArticle';
 
 @Component({
@@ -21,7 +20,6 @@ export class LastArticlesComponent implements OnInit {
     }
 
     ngOnInit() {
-      //this.articles = this.articleService.getArticles();
       this.articleService.getLastTenArticles().subscribe(value => this.articles = value);
     }
 

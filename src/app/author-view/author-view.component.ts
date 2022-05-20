@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Author } from 'src/models/Author';
-import { ArticleService } from '../article.service';
 import { AuthorService } from '../author.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { AuthorService } from '../author.service';
 })
 export class AuthorViewComponent implements OnInit {
 
-  //@Input()
   author : Author = { id: "0", name: '', bio:''};
 
   constructor(private route : ActivatedRoute, private router :Router, private authorService : AuthorService) {
