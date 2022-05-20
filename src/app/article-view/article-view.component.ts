@@ -12,15 +12,18 @@ import { AuthorService } from '../author.service';
 })
 export class ArticleViewComponent implements OnInit {
 
-  @Input()
-  article  !: Article
-  @Input()
-  author  !: Author
+  //@Input()
+  article  : Article = { id: 0, title: '', content: '', author: 0 };
+  //@Input()
+  author : Author = { id: 0, name: '', bio:''};
+
+
 
   constructor(private route : ActivatedRoute, private router :Router, private articleService : ArticleService, private authorService : AuthorService) {
     const id =  parseInt(this.route.snapshot.paramMap.get('id')|| '0');
     this.articleService.getArticle(id).subscribe((article) =>{
       this.article = article;
+      console.log(article);
       this.authorService.getAuthor(article.author).subscribe((author) =>{
         this.author = author;
       });

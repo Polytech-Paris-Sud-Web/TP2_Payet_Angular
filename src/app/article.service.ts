@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Article } from '../models/Article';
 
 import {HttpClient} from "@angular/common/http";
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {map, Observable, of} from 'rxjs';
 import { RawArticle } from 'src/models/RawArticle';
 import { environment } from 'src/environments/environment';
 
@@ -18,10 +17,12 @@ export class ArticleService {
   constructor(private http : HttpClient) { }
 
   public preloadArticles(): Observable<Article[]> {
+
     if (!this.preloadedArticles) {
       return this.http.get<Article[]>(`${environment.apiUrl}/articles`).pipe(
         map(articles => {
-          //console.log(articles);
+          console.log("----------------------------------")
+          console.log(articles);
           this.preloadedArticles = articles;
           return articles;
         })
@@ -35,6 +36,8 @@ export class ArticleService {
   //   return this.http.get<Article[]>("http://localhost:3000/articles");
   // }
   public getArticles(): Observable<Article[]> {
+    console.log("C'est de la merde");
+    console.log(this.preloadedArticles);
     return this.preloadedArticles ? of(this.preloadedArticles) : this.http.get<Article[]>(`${environment.apiUrl}/articles`);
   }
   public getLastTenArticles() : Observable<Article[]> {
@@ -51,18 +54,20 @@ export class ArticleService {
     return this.http.post<Article>(`${environment.apiUrl}/articles`, raw);
   }
 
-  public getArticle(id: number) {
-    return this.getArticles().pipe(
-      map(articles => articles.find(article => article.id === id)as Article)
-    );
+  public getArticle(id: number): Observable<Article> {
+    // console.log("++++++++++++++++++++++++++++++");
+    // console.log(this.preloadedArticles);
+    // return this.getArticles().pipe(
+    //   map(articles => articles.find(article => article.id === id)as Article)
+    // );
 
-    // const defaultArticle : Article = {
-    //   id: 0,
-    //   title: 'Inconnu',
-    //   content: 'Inconnu',
-    //   author: 0,
-    // }
-    // return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
+    const defaultArticle : Article = {
+      id: 0,
+      title: 'Inconnu',
+      content: 'Inconnu',
+      author: 0,
+    }
+    return of(this.preloadedArticles?.find(article => article.id === id) || defaultArticle);
   }
 
   public searchArticles(s :string) {
